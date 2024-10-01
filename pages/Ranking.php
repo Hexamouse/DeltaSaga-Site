@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Ranking - Delta Project</title>
-    <!-- Tambahkan link ke Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/RankingStyle.css">
     <link rel="shortcut icon" href="../assets/img/fav.png" type="image/x-icon">
@@ -13,14 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">x    
 </head>
 <body>
-    <div class="background-wrapper"></div> <!-- Pastikan elemen ini ada untuk efek blur -->
+    <div class="background-wrapper"></div>
     <!-- Navbar -->
     <?php include './Navbar.php' ?>
 
     <div class="container mt-5 pt-8">
-        <div class="content"> <!-- Tambahkan div ini untuk membungkus konten yang bisa di-scroll -->
+        <div class="content">
             <form method="post" class="mb-4">
-                <div class="btn-group" role="group" aria-label="Ranking buttons" style="margin-top: 40px;"> <!-- Tambahkan margin-top untuk menggeser button ke bawah -->
+                <div class="btn-group" role="group" aria-label="Ranking buttons" style="margin-top: 40px;">
                     <button type="submit" name="ranking" value="exp" class="glow-on-hover">Top 10 Exp</button>
                     <button type="submit" name="ranking" value="guild" class="glow-on-hover">Top 10 Guild</button>
                     <button type="submit" name="ranking" value="playtime" class="glow-on-hover">Top 10 Playtime</button>
@@ -29,7 +28,6 @@
                 </div>
             </form>
 
-            <!-- Contoh tabel untuk tampilan UI -->
             <?php
             $rankingTitles = [
                 'exp' => 'RANKING 10 TOP EXP',
@@ -57,7 +55,6 @@
                     <?php
                     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ranking'])) {
                         $rankingType = $_POST['ranking'];
-                        // Contoh data berdasarkan ranking type
                         $data = [
                             'exp' => [
                                 ['rank' => 1, 'name' => 'Player 1', 'score' => 10000],
@@ -83,7 +80,6 @@
                                 ['rank' => 9, 'name' => 'Guild 9', 'score' => 1000],
                                 ['rank' => 10, 'name' => 'Guild 10', 'score' => 500],
                             ],
-                            // Tambahkan data untuk ranking lainnya
                         ];
 
                         if (array_key_exists($rankingType, $data)) {
@@ -99,13 +95,11 @@
                     ?>
                 </tbody>
             </table>
-        </div> <!-- Tutup div content -->
+        </div>
     </div>
 
     <!-- Footer -->
      <?php include './Footer.php' ?>
-
-    <!-- Tambahkan link ke Bootstrap JS dan dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
