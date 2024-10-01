@@ -28,25 +28,25 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%; /* Kembali ke 100% */
+            width: 100%;
             height: 100%;
             background-image: url('../assets/img/20180308_halloween_1920x1200.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            filter: blur(1px) brightness(0.5) grayscale(80%); /* Tambahkan grayscale(100%) untuk hitam putih */
+            filter: blur(1px) brightness(0.5) grayscale(80%);
             z-index: -1;
-            transform: scale(1.1); /* Tambahkan ini untuk zoom */
+            transform: scale(1.1);
         }
         .content {
             position: relative;
             z-index: 1;
-            overflow-y: auto; /* Ubah dari scroll ke auto */
+            overflow-y: auto;
             -ms-overflow-style: none;
             scrollbar-width: none;
-            display: flex; /* Tambahkan ini */
-            justify-content: center; /* Tambahkan ini */
-            align-items: center; /* Tambahkan ini */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .content::-webkit-scrollbar {
             display: none;
@@ -56,21 +56,21 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            width: 300px; /* Ubah dari persentase ke piksel */
-            max-width: 90%; /* Tambahkan ini untuk responsif */
-            position: relative; /* Tambahkan ini */
+            width: 300px;
+            max-width: 90%;
+            position: relative;
         }
         .login-form::before {
             content: "";
             position: absolute;
             top: 0;
-            left: -50px; /* Sesuaikan posisi gambar */
-            width: 50px; /* Sesuaikan lebar gambar */
-            background-image: url('../assets/img/sidebar-image.png'); /* Ganti dengan path gambar yang sesuai */
+            left: -50px;
+            width: 50px;
+            background-image: url('../assets/img/sidebar-image.png'); 
             background-size: cover;
             background-repeat: no-repeat;
-            border-top-left-radius: 5px; /* Sesuaikan dengan border-radius form */
-            border-bottom-left-radius: 5px; /* Sesuaikan dengan border-radius form */
+            border-top-left-radius: 5px; 
+            border-bottom-left-radius: 5px;
         }
         .login-form input {
             display: block;
@@ -97,7 +97,7 @@
             margin-bottom: 10rem;
             font-size: 2.5em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-top: 5rem; /* Tambahkan margin-top yang lebih besar untuk menurunkan posisi h1 */
+            margin-top: 5rem;
         }
         .remember-me {
             display: flex;
@@ -105,12 +105,12 @@
             margin-bottom: 5px;
             color: white;
             margin-right: 150px;
-            flex-direction: row; /* Pastikan ini ada */
-            white-space: nowrap; /* Pastikan ini ada */
+            flex-direction: row;
+            white-space: nowrap;
             font-size: 16px;
         }
         .remember-me input[type="checkbox"] {
-            display: none; /* Sembunyikan checkbox asli */
+            display: none; 
         }
         .remember-me input[type="checkbox"] + label {
             position: relative;
@@ -146,7 +146,7 @@
             border-width: 0 2px 2px 0;
         }
         .glow-on-hover {
-            width: 100%; /* Sesuaikan dengan lebar tombol login */
+            width: 100%;
             height: 50px;
             border: none;
             outline: none;
@@ -257,7 +257,7 @@ for (let i = 0; i < numPoints; i++) {
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 2,
         vy: (Math.random() - 0.5) * 2,
-        opacity: Math.random() * 0.5 + 0.5 // Tambahkan opacity random antara 0.5 dan 1
+        opacity: Math.random() * 0.5 + 0.5 
     });
 }
 
@@ -271,7 +271,7 @@ function draw() {
         if (point.x < 0 || point.x > canvas.width) point.vx *= -1;
         if (point.y < 0 || point.y > canvas.height) point.vy *= -1;
 
-        ctx.fillStyle = `rgba(255, 255, 255, ${point.opacity})`; // Gunakan opacity
+        ctx.fillStyle = `rgba(255, 255, 255, ${point.opacity})`;
         ctx.beginPath();
         ctx.arc(point.x, point.y, 2, 0, Math.PI * 2);
         ctx.fill();
@@ -284,7 +284,7 @@ function draw() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 100) {
-                ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - distance / 100) * points[i].opacity})`; // Gunakan opacity berdasarkan jarak
+                ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - distance / 100) * points[i].opacity})`; 
                 ctx.beginPath();
                 ctx.moveTo(points[i].x, points[i].y);
                 ctx.lineTo(points[j].x, points[j].y);
