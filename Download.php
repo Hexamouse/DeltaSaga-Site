@@ -46,20 +46,16 @@
         </thead>
         <tbody>
             <?php
-            // Koneksi ke database
             include 'config/dbConnection.php';
 
-            // Cek koneksi
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            // Query untuk mengambil data file
             $sql = "SELECT fileName AS file_name, fileSize AS file_size, file_path FROM launcherCDN";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-                // Output data dari setiap baris
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row["file_name"] . "</td>";
@@ -99,20 +95,16 @@
         </thead>
         <tbody>
             <?php
-            // Koneksi ke database
             include 'config/dbConnection.php';
 
-            // Cek koneksi
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            // Query untuk mengambil data file
             $sql = "SELECT fileName AS file_name, fileSize AS file_size, file_path FROM sdkCDN";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-                // Output data dari setiap baris
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row["file_name"] . "</td>";
@@ -213,7 +205,7 @@ for (let i = 0; i < numPoints; i++) {
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 2,
         vy: (Math.random() - 0.5) * 2,
-        opacity: Math.random() * 0.5 + 0.5 // Tambahkan opacity random antara 0.5 dan 1
+        opacity: Math.random() * 0.5 + 0.5
     });
 }
 
@@ -240,7 +232,7 @@ function draw() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 100) {
-                ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - distance / 100) * points[i].opacity})`; // Gunakan opacity berdasarkan jarak
+                ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - distance / 100) * points[i].opacity})`;
                 ctx.beginPath();
                 ctx.moveTo(points[i].x, points[i].y);
                 ctx.lineTo(points[j].x, points[j].y);
