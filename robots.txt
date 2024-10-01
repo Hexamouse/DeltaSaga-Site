@@ -1,0 +1,18 @@
+# Mengizinkan semua bot untuk mengakses semua konten
+User-agent: *
+Disallow:
+
+# Blokir semua bot dari mengakses folder /private/
+User-agent: *
+Disallow: /private/
+Disallow: /pages/
+Disallow: /pages/api/
+Disallow: /assets/
+
+# Blokir bot tertentu (misalnya, BadBot) dari mengakses seluruh situs
+User-agent: BadBot
+Disallow: /
+
+# Mengizinkan Googlebot untuk mengakses seluruh situs
+User-agent: Googlebot
+Disallow:
