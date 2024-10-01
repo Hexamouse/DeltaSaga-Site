@@ -21,7 +21,7 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Zoom background to remove edges */
+    width: 100%;
     height: 100vh;
     padding: 50px;
     background-image: url('../assets/img/20180308_picnic_1920x1200.jpg');
@@ -31,7 +31,7 @@ html, body {
     background-attachment: fixed;
     filter: blur(3px) brightness(0.4) grayscale(40%) !important;
     z-index: -1;
-    transform: scale(1.1); /* Tambahkan ini untuk zoom */
+    transform: scale(1.1);
 }
 .content {
     position: relative;
@@ -180,18 +180,18 @@ button.download-link span {
     background-color: #83000B;
 }
 .footer {
-    background-color: #343a40; /* Warna latar belakang footer */
-    color: white; /* Warna teks footer */
-    padding: 5px 0; /* Padding atas dan bawah */
-    text-align: center; /* Teks rata tengah */
+    background-color: #343a40;
+    color: white;
+    padding: 5px 0;
+    text-align: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    margin-top: auto; /* Tambahkan ini untuk memastikan footer tetap di bawah */
+    margin-top: auto;
 }
 .footer a {
-    color: white; /* Warna teks link */
-    transition: color 0.3s; /* Tambahkan animasi transisi untuk link */
+    color: white;
+    transition: color 0.3s;
 }
 .footer a:hover {
-    color: #83000B; /* Warna teks link saat hover */
+    color: #83000B;
 }
