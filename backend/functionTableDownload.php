@@ -1,18 +1,14 @@
             <?php
-            // Koneksi ke database
             include './config/dbConnection.php';
 
-            // Cek koneksi
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            // Query untuk mengambil data file
             $sql = "SELECT fileName AS file_name, fileSize AS file_size, file_path FROM files";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-                // Output data dari setiap baris
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row["file_name"] . "</td>";
