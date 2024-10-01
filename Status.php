@@ -21,16 +21,16 @@
             text-align: center;
             margin: 50px;
             padding: 50px;
-            background-color: transparent; /* Warna latar belakang */
+            background-color: transparent;
             backdrop-filter: blur(10px);
-            border-radius: 10px; /* Sudut membulat */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .status-photo {
             top: 10px;
-            border-radius: 20%; /* Membuat foto bulat */
+            border-radius: 20%;
             margin-bottom: 1rem;
-            font-size: 1.5rem; /* Ukuran icon diperbesar */
+            font-size: 1.5rem;
         }
 
         h2 {
@@ -38,9 +38,9 @@
             text-align: center;
             font-family: 'Chakra Petch', sans-serif;
             font-weight: bold;
-            font-size: 2.5rem !important; /* Ukuran font diperbesar */
-            margin-bottom: 30px; /* Tambahkan margin bawah */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tambahkan bayangan teks */
+            font-size: 2.5rem !important;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         h3 {
@@ -51,7 +51,6 @@
             font-size: 1rem;
         }
 
-        /* Tambahkan gaya berikut untuk status ping */
         .ping-status {
             font-family: 'Chakra Petch', sans-serif;
             font-weight: bold;
@@ -93,30 +92,30 @@
 <div class="content">
     <br>
     <br>
-    <h2 id="animatedTitle"></h2> <!-- Kosongkan isi h2 untuk animasi -->
+    <h2 id="animatedTitle"></h2>
     <div class="status-list">
         <div class="status-member">
-            <i class="fas fa-signal  status-photo"></i> <!-- Mengganti img dengan icon -->
+            <i class="fas fa-signal  status-photo"></i>
             <h3>Ping</h3>
-            <p id="pingValue"></p> <!-- Hapus kata "Owners" -->
+            <p id="pingValue"></p>
         </div>
         <div class="status-member">
-            <i class="fas fa-code status-photo"></i> <!-- Mengganti img dengan icon -->
+            <i class="fas fa-code status-photo"></i>
             <h3>GameServer</h3>
             <p>Developer</p>
         </div>
         <div class="status-member">
-            <i class="fas fa-gamepad status-photo"></i> <!-- Mengganti img dengan icon -->
+            <i class="fas fa-gamepad status-photo"></i>
             <h3>Player Online</h3>
             <p>Game Master</p>
         </div>
         <div class="status-member">
-            <i class="fas fa-gamepad status-photo"></i> <!-- Mengganti img dengan icon -->
+            <i class="fas fa-gamepad status-photo"></i>
             <h3>Total Users</h3>
             <p>Game Master</p>
         </div>
         <div class="status-member">
-            <i class="fas fa-gamepad status-photo"></i> <!-- Mengganti img dengan icon -->
+            <i class="fas fa-gamepad status-photo"></i>
             <h3>Total Guild</h3>
             <p>Game Master</p>
         </div>
@@ -146,7 +145,7 @@ for (let i = 0; i < numPoints; i++) {
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 2,
         vy: (Math.random() - 0.5) * 2,
-        opacity: Math.random() * 0.5 + 0.5 // Tambahkan opacity random antara 0.5 dan 1
+        opacity: Math.random() * 0.5 + 0.5
     });
 }
 
@@ -160,7 +159,7 @@ function draw() {
         if (point.x < 0 || point.x > canvas.width) point.vx *= -1;
         if (point.y < 0 || point.y > canvas.height) point.vy *= -1;
 
-        ctx.fillStyle = `rgba(255, 255, 255, ${point.opacity})`; // Gunakan opacity
+        ctx.fillStyle = `rgba(255, 255, 255, ${point.opacity})`;
         ctx.beginPath();
         ctx.arc(point.x, point.y, 2, 0, Math.PI * 2);
         ctx.fill();
@@ -173,7 +172,7 @@ function draw() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 100) {
-                ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - distance / 100) * points[i].opacity})`; // Gunakan opacity berdasarkan jarak
+                ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - distance / 100) * points[i].opacity})`;
                 ctx.beginPath();
                 ctx.moveTo(points[i].x, points[i].y);
                 ctx.lineTo(points[j].x, points[j].y);
@@ -190,7 +189,7 @@ draw();
 
 <script>
 const title = document.getElementById('animatedTitle');
-const text = "Server Status"; // Teks yang akan ditampilkan
+const text = "Server Status";
 title.innerText = '';
 let index = 0;
 let cursorVisible = true;
@@ -199,9 +198,8 @@ function type() {
     if (index < text.length) {
         title.innerText += text.charAt(index);
         index++;
-        setTimeout(type, 100); // Kecepatan mengetik
+        setTimeout(type, 100);
     } else {
-        // Setelah selesai mengetik, mulai berkedip kursor
         setInterval(() => {
             title.innerText = title.innerText.endsWith('|') ? text : text + '|';
         }, 500);
@@ -215,7 +213,7 @@ type();
 async function checkPing() {
     const startTime = Date.now();
     try {
-        const response = await fetch('178.128.84.169:80', { 
+        const response = await fetch('0.0.0.0:80', { 
             mode: 'no-cors',
             cache: 'no-cache'
         });
@@ -225,7 +223,6 @@ async function checkPing() {
         const pingElement = document.getElementById('pingValue');
         pingElement.innerText = pingValue;
 
-        // Perbaikan rentang nilai ping
         let status, statusClass, color;
         if (ping >= 1 && ping <= 19) {
             status = 'Good';
@@ -245,7 +242,6 @@ async function checkPing() {
             color = '#ff0000'; // Merah
         }
 
-        // Perbarui elemen status
         let statusElement = document.getElementById('pingStatus');
         if (!statusElement) {
             statusElement = document.createElement('p');
@@ -256,7 +252,6 @@ async function checkPing() {
         statusElement.innerText = status;
         statusElement.className = `ping-status ${statusClass}`;
         
-        // Terapkan warna ke teks ping dan status
         pingElement.style.color = color;
         statusElement.style.color = color;
     } catch (error) {
@@ -264,10 +259,10 @@ async function checkPing() {
         let statusElement = document.getElementById('pingStatus');
         if (statusElement) statusElement.innerText = '';
     }
-    setTimeout(checkPing, 1000); // Cek ping setiap 1 detik
+    setTimeout(checkPing, 1000);
 }
 
-checkPing(); // Panggil fungsi untuk memeriksa ping
+checkPing();
 </script>
 </body>
 </html>
