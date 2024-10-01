@@ -58,7 +58,7 @@
             display: none;
             position: absolute;
             background-color: transparent !important;
-            backdrop-filter: blur(10px); /* Pastikan warna latar belakang sesuai */
+            backdrop-filter: blur(10px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.8);
             border-radius: 5px; 
             top: 100%;
@@ -73,13 +73,13 @@
         .dropdown-menu a {
             color: white;
             padding: 12px 16px;
-            text-decoration: none; /* Hilangkan garis bawah */
+            text-decoration: none;
             display: block;
             transition: background-color 0.3s;
         }
         .dropdown-menu a:hover {
             backdrop-filter: blur(10px);
-            text-decoration: none; /* Pastikan garis bawah tetap hilang saat hover */
+            text-decoration: none;
         }
         .nav-item:hover .dropdown-menu {
             display: block;
@@ -166,7 +166,7 @@
             <img src="../assets/img/collab.png" width="200">
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto" style="margin-right: 8rem;"> <!-- Tambahkan margin kiri -->
+            <ul class="navbar-nav ml-auto" style="margin-right: 8rem;">
             <li class="nav-item">
                     <a class="nav-link" href="../guide.php">Guide</a>
                     <div class="dropdown-menu">
@@ -191,11 +191,11 @@
                     <a class="nav-link no-underline" href="../Community">Community</a>
                     <div class="dropdown-menu">
                         <a href="../discord.php">Discord</a>
-                        <a href="https://www.facebook.com/lostsagaindoofficial2?locale=id_ID" target="_blank">Facebook</a> <!-- Buka di tab baru -->
+                        <a href="https://www.facebook.com/lostsagaindoofficial2?locale=id_ID" target="_blank">Facebook</a>
                     </div>
                 </li>
             </ul>
-            <a class="nav-link btn btn-get-started glow-on-hover text-white" style="margin-right: 50px" href="../auth/Login">Get Started</a> <!-- Pisahkan tombol Get Started -->
+            <a class="nav-link btn btn-get-started glow-on-hover text-white" style="margin-right: 50px" href="../auth/Login">Get Started</a>
         </div>
     </nav>
 </body>
