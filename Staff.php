@@ -20,15 +20,15 @@
             text-align: center;
             margin: 50px;
             padding: 50px;
-            background-color: transparent; /* Warna latar belakang */
+            background-color: transparent;
             backdrop-filter: blur(10px);
-            border-radius: 10px; /* Sudut membulat */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .staff-photo {
             top: 10px;
-            width: 150px; /* Atur ukuran foto */
-            border-radius: 20%; /* Membuat foto bulat */
+            width: 150px;
+            border-radius: 20%;
             margin-bottom: 1rem;
         }
 
@@ -64,7 +64,7 @@
 <div class="content">
     <br>
     <br>
-    <h2 id="animatedTitle"></h2> <!-- Kosongkan isi h2 untuk animasi -->
+    <h2 id="animatedTitle"></h2>
     <div class="staff-list">
         <div class="staff-member">
             <img src="assets/img/devpict2.png" class="staff-photo">
@@ -107,7 +107,7 @@ for (let i = 0; i < numPoints; i++) {
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 2,
         vy: (Math.random() - 0.5) * 2,
-        opacity: Math.random() * 0.5 + 0.5 // Tambahkan opacity random antara 0.5 dan 1
+        opacity: Math.random() * 0.5 + 0.5
     });
 }
 
@@ -121,7 +121,7 @@ function draw() {
         if (point.x < 0 || point.x > canvas.width) point.vx *= -1;
         if (point.y < 0 || point.y > canvas.height) point.vy *= -1;
 
-        ctx.fillStyle = `rgba(255, 255, 255, ${point.opacity})`; // Gunakan opacity
+        ctx.fillStyle = `rgba(255, 255, 255, ${point.opacity})`;
         ctx.beginPath();
         ctx.arc(point.x, point.y, 2, 0, Math.PI * 2);
         ctx.fill();
@@ -134,7 +134,7 @@ function draw() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 100) {
-                ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - distance / 100) * points[i].opacity})`; // Gunakan opacity berdasarkan jarak
+                ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - distance / 100) * points[i].opacity})`;
                 ctx.beginPath();
                 ctx.moveTo(points[i].x, points[i].y);
                 ctx.lineTo(points[j].x, points[j].y);
@@ -151,7 +151,7 @@ draw();
 
 <script>
 const title = document.getElementById('animatedTitle');
-const text = "Developer Delta Project"; // Teks yang akan ditampilkan
+const text = "Developer Delta Project";
 title.innerText = '';
 let index = 0;
 let cursorVisible = true;
@@ -160,9 +160,8 @@ function type() {
     if (index < text.length) {
         title.innerText += text.charAt(index);
         index++;
-        setTimeout(type, 100); // Kecepatan mengetik
+        setTimeout(type, 100);
     } else {
-        // Setelah selesai mengetik, mulai berkedip kursor
         setInterval(() => {
             title.innerText = title.innerText.endsWith('|') ? text : text + '|';
         }, 500);
